@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>数组去重</title>
+</head>
+
+<body>
+    <script>
+        //pop    push   shift  unshift  slice   splice   indexOf
+        //lastIndexOf   concat  
+        //数组去重  把数组中相同的项去掉  12种
+        //var ary = [12,56,8,56,19,8,67,12];
+        //console.log(ary);
+        //indexOf: 检测数组成员在数组张第一次出现的索引位置,如果不存在返回-1;
+        //1.创建一个空数组newAry
+        //2.循环ary,判断该项在newAry中是否存在,通过indexOf检验如果返回-1,说明不在newAry中,那么就把这一项放到新的空数组中
+        //3.最后得到的newAry就是没有重复项的;
+        /*  var newAry= [];
+        for(var i=0;i<ary.length;i++){
+            //console.log(ary[i])
+            if(newAry.indexOf(ary[i])=== -1){
+                newAry.push(ary[i])
+                //console.log(newAry)
+            }
+            
+        }
+         
+        console.log(newAry) */
+        /*  var ary = [12,56,8,56,19,8,67,12];
+         var newAry= [];
+        
+         for(var i=0;i<ary.length;i++){
+             //console.log(ary[i])
+             //找到ary 中索引i对应的那一项,赋值给变量cur;下面就不再查找了
+             var cur = ary[i];
+             if(newAry.indexOf(cur)=== -1){
+                 newAry.push(cur)
+                 //console.log(newAry)
+             }
+             
+         }
+          
+         console.log(newAry)
+      */
+
+
+        //2.对象的属性名不能重复
+
+        // var obj = {};
+        // //添加一个键值对
+        // obj[10] = 10;
+        // obj[10] = 10;
+        // console.log(obj)//{10;10}
+
+        //var ary = [12, 56, 8, 56, 19, 8, 67, 12];
+
+        //1.创建一个空对象obj
+        //2.循环数组,将数组的每一项添加到obj中,数组成员既作为属性名,又作为属性值
+        //3.再创建一个空数组
+        //4.再循环obj,把obj的属性值都放入的新空数组中
+        //5.最后的数组就是去重后的数组
+        // var obj = {};
+        // for (var i = 0; i < ary.length; i++) {
+        //     obj[ary[i]] = ary[i];
+
+        // }
+        // var newAry = [];
+        // for (var key in obj) {
+        //     //key 都是字符串  通过key获取到对应的属性值
+        //     newAry.push(obj[key])
+        // }
+        // console.log(newAry)
+
+        // var obj = {};
+        // for (var i = 0; i < ary.length; i++) {
+        //     obj[ary[i]] = ary[i];
+        // }
+        // var cur = [];
+        // for (var key in obj) {
+        //     cur.push(obj[key])
+        // }
+        // console.log(obj[key])
+        // console.log(obj.key)//undefinde   获取属性名是key的属性值
+        // console.log(cur)
+
+//3.对象中属性名不能重复,改变原有的数组
+    //   var ary = [12, 56, 8, 56, 19, 8, 67, 12];
+    //     var obj = {};
+    //     for( var i=0; i<ary.length;i++){
+    //         var cur = ary[i];//把数组的当前项给了变量cur;
+    //         if(obj[cur]===cur){
+    //            // ary.splice(i,1);//数组塌陷,当删除数组中的一项时,该项后面的每一项的索引都要重新计算并发生改变;非常消耗浏览器的性能;
+    //             ary[i] = ary[ary.length-1];//将数组的最后一项覆盖这一项;
+    //             ary.length--;
+    //            // i--;//对往前移动的这一项,进行校验
+    //             continue;//结束本轮循环
+    //         }
+    //         obj[cur] = cur;// obj 中属性名和属性值是一样的
+
+    //     }
+    //     console.log(ary)
+
+    //==============================
+        //数组去重:把数组中相同的项去掉
+        //第一种: 用indexOf:检测数组成员在数组中第一次出现的索引位置,如果不存在就返回-1;
+        /* 
+        1.创建一个空数组newAry
+        2.循环ary,判断该项在newAry 中是否存在,通过indexOf检验如果返回-1,说明不在newAry中,那么就把这一项放到新的空数组中
+        3.最后得到的newAry就是没有重复项的
+        
+         */
+        // var ary = [1,1,2,3,4,4,5,67,]
+        // var newAry = [];
+        // for(var i=0;i<ary.length;i++){
+        //     if(newAry.indexOf(ary[i])===-1){
+        //         newAry.push(ary[i]);
+        //     }
+        //     // var obj = ary[i];
+        //     // if(newAry.indexOf(obj) === -1){
+        //     //     newAry.push(obj);
+        //     // }
+        // }
+        // console.log(newAry)
+
+        // var ary= [1,1,2,3,4,4,5,67];
+        // var newAry =[];
+        // for(var i=0;i<ary.length;i++){
+        //     if(newAry.indexOf(ary[i])===-1){
+        //         newAry.push(ary[i])
+        //     }
+        // }
+        // console.log(newAry)
+        
+
+        //=================
+        //2.对象的属性名不能重复
+       /* 
+       a.创建一个空对象obj;
+       b.循环数组,将数组的每一项添加到obj中,数组成员既作为属性名,又作为属性值
+       c.再创建一个空数组
+       d.再循环obj,把obj的属性值都放入新的空数组中;
+       e.最后的数组就是去重后的数组;
+         */
+       /*  var ary= [1,1,2,3,4,4,5,67];
+        var obj = {};
+        for(var i=0;i<ary.length;i++){
+           // obj.push(obj[ary[i]]==ary[i])
+            obj[ary[i]] = ary[i];
+            console.log(obj)
+        }
+        var cur = [];
+        for(var key in obj){
+            cur.push(obj[key]);
+        }
+
+        console.log(cur) */
+
+
+        /* var ary= [1,1,2,3,4,4,5,67];
+
+        var obj={};
+        for(var i =0;i<ary.length;i++){
+            obj[ary[i]]=ary[i];
+        }
+        var cur = [];
+        for(var key in obj){
+            cur.push(obj[key]);
+        }
+        console.log(cur) */
+
+     /*    var ary= [1,1,2,3,4,4,5,67];
+        var obj= {};
+        for(var i=0;i<ary.length;i++){
+            obj[ary[i]]=ary[i];
+        }
+        var cur = [];
+        for(var key in obj){
+            cur.push(obj[key]);
+        }
+        console.log(cur) */
+
+
+        //3.对象中属性名不能重复;改变原有的数组
+        // var ary= [1,1,2,3,4,4,5,67];
+        // var obj = {};
+        // for(var i =0;i<ary.length;i++){
+        //     var cur =ary[i];
+        //     if(obj[cur]===cur){
+        //         ary.splice(i,1);
+        //        // ary[i] = ary[ary.length-1];
+        //         i--;
+        //         continue;
+        //     }
+        //     obj[cur] = cur;
+        // }
+        
+    </script>
+</body>
+
+</html>

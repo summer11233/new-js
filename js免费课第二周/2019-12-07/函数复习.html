@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    #box{
+        width: 200px;
+        height: 30px;
+        border: 1px solid red;
+    }
+    
+    
+    </style>
+</head>
+
+<body>
+    <div id="box"></div>
+    <script>
+        //1.函数的定义和执行
+        //2.函数的形参和实参
+        //3.函数的arguments
+        //4.函数的return;
+        //5.匿名函数
+        // 函数属于引用数据类型的,也就是空间地址类型的;
+
+
+        // var b = 100;
+        // var obj = { a: b, c: 1 }
+        // console.log(obj);//{a:100,c:1}  此时解析b
+        // function fn() {
+        //     var num = { a: 1 };
+        //     var c = num.a;
+        //     console.log(100);//不输出,都是字符串,只是定义 么有执行
+       // }
+        //1. 开辟一个堆内存,这个堆内存对应一个十六进制的空间地址;
+        //2.把函数体中的代码当做字符串存储到了堆内存中;
+        //3.把这个空间地址赋值给函数名
+
+        //1.形成私有作用域
+        //2.形参赋值
+        //3.变量提升
+        //4.代码从上到下执行
+        //5.作用域是否销毁
+
+
+        //1.形参和实参是一一对应的;
+        //2.形参没有对应的实参,形参默认值是undefined;
+        //3.函数的形参es6版本中,可以赋默认值;
+
+
+
+
+
+        //arguments   :  实参集合
+
+        // function sum() {
+        //     var total = 0;
+        //     for (var i = 0; i < arguments.length; i++) {
+        //         var cur = Number(arguments[i]);
+        //         if (!isNaN(cur)) {
+        //             total += cur;
+        //         }
+        //     }
+        //     return total;
+        // }
+       
+        // var t=sum(1, 2, 3, 4, 5, 7)
+        // console.log(sum(1, 2, 3, 4, 5, 7));
+        // console.log(t)  
+
+
+
+        // //函数的return;
+
+
+        function s(){
+            var t = 66;//这个变量是当前作用域下私有的,函数外面是不能访问函数里面的变量;
+            if(NaN){
+                return t;
+            }
+            console.log(8888)
+            if(Number){
+                return t;
+            }
+
+            console.log(888);
+            return t;//return的并不是t这个变量,return 后面值需要在函数外面接收一下;
+
+            console.log(100);//函数return下面的代码都不再执行了;
+        }
+        var val = s();//把函数的返回值[函数的执行结果,函数return出来的内容]给了变量val;
+        console.log(val);
+        console.log(s());//也是代表输出函数的执行结果;
+
+        //1.return 是把函数体中的值return到函数的外面;
+        //2.return 下面的代码不再执行;
+        //如果函数中没有return,那么函数的返回值默认就是undefined;
+
+
+
+        //匿名函数
+        var fn = function(){
+            console.log(1)
+        }
+        fn();//给了变量fn
+        //自执行函数:
+         (function(){
+            console.log(2200);
+        })();
+        +function(){}();
+        -function(){}();
+        !function(){}();
+        ~function(){}();
+
+        //箭头函数
+        var  fn = ()=>{};
+
+        //this: 关键字;在特殊情境下有特殊的含义;
+        var box = document.getElementById("box");//{onclick:null};
+        box.onclick = function(){
+            console.dir(this);//元素对象
+        }
+
+        //DOM
+
+    </script>
+</body>
+
+</html>

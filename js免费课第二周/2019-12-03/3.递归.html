@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>递归</title>
+</head>
+<body>
+    <script>
+    //排序:  冒泡  插入  快速   为了提高编程思想
+    //sort排序:
+    //求1-100数字的和
+    var ary = 0;
+    for(var i=1;i<=100;i++){
+        ary+=i;
+    }
+    console.log(ary)
+    //求1到100之间是3并且是5倍数的和
+    var ary = 0;
+    for(var i=1;i<=100;i++){
+        if(i%3===0&&i%5===0){//取余
+            ary+=i;
+        }
+       
+    }
+    
+    console.log(ary)
+
+    //Maximum call stack size exceeded  栈溢出
+    //在函数体内部执行函数本身的这种现象,就是函数的递归;
+
+    //递归中的函数,一般都有终止的条件
+    // function  fn(){
+    //     //console.log(1)//无限次执行
+    //    //fn()//函数fn会从头开始执行;
+    // }
+    // fn()
+
+        //用递归的方法求1-100的和
+
+        function  sum(num){
+            if(num===1){
+                return 1
+            }
+           return num+sum(num-1);
+        }
+        var obj= sum(100);
+        console.log(sum)
+
+        //第一次;sum(100)   100+99+98+97+  2+1;
+        //第二次  sum(99)   99+sum(98)
+        //第三才  sum(98)   98+sum(97)
+
+        function  f(){
+            return 100;
+        }
+        var f = f();//是f的执行结果
+
+        //1-100直接是3和5倍数的和;用递归的方法
+
+        function sum(num){
+            if(num===1){
+                return 1;
+            };
+            if(i%3===0&&i%5===0){
+                num+=i;
+            } 
+        }
+        var obj=sum(100);
+        console.log(obj);
+    </script>
+</body>
+</html>

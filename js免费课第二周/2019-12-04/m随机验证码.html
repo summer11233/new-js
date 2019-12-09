@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+       #box1{
+        margin: auto;
+        margin-left: 300px;
+    }
+    #btn{
+        margin: auto;
+        margin-top: 300px;
+        width: 50px;
+        height: 30;
+        background: yellow;
+    }
+    #box{
+        width: 50px;
+        height: 30px;
+        border: 1px solid red;
+        border-radius: 5px;
+        
+       
+    }
+    
+    </style>
+</head>
+<body>
+    <div id="box1">
+
+            <button id="btn">按钮</button>
+            <div id="box"></div>
+    </div>
+    <script>
+    //验证码:
+    //1.获取元素,给显示的元素绑定点击事件
+    //2.产生一个四位的随机验证码,需要产生四个随机的数字;
+    //3.通过随机的数字作为索引去获取字符串中的字符,并且拼接到一起
+    //4.把产生字符放到oDiv这个元素中;
+    var str="0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    var oDiv = document.getElementById('box');
+    var btn = document.getElementById('btn');
+    console.log(btn);
+    console.log(oDiv)
+    function box(){//给该元素添加点击事件
+        var i =0;
+        var newStr = '';//用于接收新产生四个字符;
+        while(i<4){//就是为了循环四次,产生四个随机的字符;
+
+         
+            //产生一个0-61的随机整数;
+            var num = Math.round(Math.random()*(61-0)+0);
+            //在拼接之前,先校验一下,newStr是否存在该字符,如果存在,就需要重新产生一个新的字符;
+            if(newStr.toLowerCase().indexOf(str[num].toLowerCase())===-1){
+                newStr+=str[num];
+                i++;
+            };
+            
+        }
+        oDiv.innerHTML = newStr;
+       
+    }
+  // box();//没有点击的时候,就先让box执行一次;
+   let num =0;
+    btn.onclick=function(){
+      let timer=  setInterval(function(){
+            
+        box();
+         num++;
+         console.log(num);
+         if(num===10){
+             clearInterval(timer);
+         } 
+
+
+
+        },1000)
+
+    };//btn  就是函数的空间地址
+    
+    
+    </script>
+</body>
+</html>

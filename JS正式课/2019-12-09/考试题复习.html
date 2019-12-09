@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    //1.基本数据类型
+   // 引用数据类型
+   //2.区别:一个操作值,一个操作址
+//    var num = 100;//内存
+//    var obj = {};//内存   val值 必须是数据类型的一种  所以必须加字符串  如果不加 必须在外面写个变量
+
+//     console.dir(name);
+//     console.log(name)
+//     console.log(100);//控制台
+//     alert(300);//弹出框  //alert 会在浏览器描绘DOM之前执行
+    //先执行alert  在渲染DOM
+    //DOM  树--->CSS 树  -->rander树--->pait(描绘)
+
+
+
+    //引用数据类型都是存储到了堆内存中；
+        // 创建一个对象时
+        // 1. 首先会在堆内存开辟一个十六进制的空间地址对应的堆内存
+        // 2. 把对象中键值对存储到这个新开辟的空间地址中
+        // 3. 把这个十六进制的空间地址赋值给变量名obj;
+
+    var obj = {
+        age:10,
+        fn:(function(age){
+            console.log(age);
+        })(obj.age)//报错  TypeError: Cannot read property 'age' of undefined   (括号里面相当于是undefined.age  此时没有把十六进制给变量名obj)
+    }
+    //分析对象的运行情况    函数运行的时候,第三步还没有赋值给age,所以是undefinde,undefined是一个基本数据类型  所以括号里是undefined.age 
+    
+
+    //2.typeof  只能检测基本数据类型
+    //instanceof   constructor  Object.prototype.toString.call()
+
+    //3.如何把函数中的
+    //1.形参    arguments;  一一映射关系
+    document.getElementById(); //通过id获取
+     var box =document.getElementsByClassName("box")[0];//I8 以下不兼容  //[] 
+    var box1 =document.getElementsByClassName("box")[0];//[{onclick:null}]  数组的中的对象//所以不符合
+    box.onclick = function(){};
+    box1.onclick = function(){};//不对
+
+    //1.document.crenteElement("div")//对象类型的
+   // 2.appendChild
+        //父节点.appendChild(子节点);
+        //parent.appendChild(子节点)
+        //3.removeChild
+         //父节点.appendChild(子节点);
+         //4.insertBefore:在什么之前插入元素
+        //parent.insertBefore(newChild,oldChild)
+         //5.replaceChild;
+        //6.cloneNode;  true//深刻龙   false  浅克隆
+        //7.getAttribute   setAtrribute removeAttribute;  
+        //8.classList   add   remove  replace;
+
+
+
+        //previousSibling
+        //previousElementSibling//不兼用
+    //封装一个兼容的哥哥元素节点
+    function  obj(url){
+        var pre = cur.previousSibling;
+        while(pre){
+            if(pre.nodeType===1){
+                return  pre;
+            }
+            pre = pre.previousSibling;
+        }
+
+    }
+
+    obj(last);
+
+    function obj(cur){
+        var pre = cur.previousSibling;
+        while(pre){
+            if(pre.nodeType===1){
+                return pre;
+
+            }
+            pre = pre.previousSibling;
+        }
+        return pre;//如果该元素没有哥哥元素节点,就是null
+    }
+
+
+    // sutstr  substing slice
+    // replace
+    // push  ary[ary.length] =100;    ary.splice(ary.length,0,100)
+    //pop   ary.length--;
+    //forEach    默认返回值都是undefined
+    //map 有返回值  
+
+    //看看一等  两等  三等
+
+    function obj(cur){
+        var pre = cur.previousSibling;
+        while(pre){
+            if(pre.nodeType===1){
+                return pre;
+            }
+            pre = pre.previousSibling;
+        }
+        return pre;
+    }
+    obj();
+    function obj(cur){
+        var pre = pre.previousSibling
+        while(pre){
+            if(pre.nodeType===1){
+                return pre;
+            }
+            pre = pre.previousSibling;
+        }
+        return pre;
+    }
+
+    function obj(cur){
+            var pre = cur.previousSibling;
+            while(pre){
+                if(pre.nodeType===1){
+                        return pre;
+                        }
+                pre = pre.previousSibling;
+            }
+            return pre;
+    }
+    obj();
+    </script>
+</body>
+</html>

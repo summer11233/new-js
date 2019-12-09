@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>选项卡</title>
+    <style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    .tab{
+        /* width: 400px;
+        height: 300px; */
+        margin: 100px auto;
+        margin-left: 400px;
+      /* margin: 0 auto; */
+        /* border: 1px solid rebeccapurple; */
+    }
+    #list{
+        list-style: none;
+        overflow: hidden;
+    }
+    #list li{
+        float: left;
+        width: 80px;
+        height: 30px;
+        line-height: 30px;
+        background:green;
+        text-align: center;
+        border-radius: 5px;
+        margin-right: 20px;
+        cursor: pointer;
+    }
+    .tab div{
+        display: none;
+        width: 400px;
+        height: 300px;
+        border: 1px solid red;
+        line-height: 300px;
+        text-align: center;
+        color: royalblue;
+        font-size: 30px;
+    }
+    .tab .select{
+        display: block;
+    }
+    </style>
+</head>
+<body>
+    <div id="tab" class="tab">
+        <ul id="list">
+            <li class="select">赵磊</li>
+            <li>朴树</li>
+            <li>许巍</li>
+        </ul>
+        <div class="select">小酒馆</div>
+        <div>清白之年</div>
+        <div>曾梦想仗剑走天涯</div>
+
+
+    </div>
+
+    <script>
+    //1.要操作谁,就要先获取谁;通过点击不同的li,让li对应的div显示;
+    var tab = document.getElementById('tab');
+    var list = document.getElementById('list');
+
+    var oLis = list.getElementsByTagName('li');
+    //在list这个元素中获取li元素;
+    var divs = tab.document.getElementsByTagName('div');
+        for(var i= 0;i<oLis.length;i++){
+            oLis[i].index= i;
+            oLis[i].onclick = function(){
+
+            }
+        }
+    
+    
+    </script>
+</body>
+</html>

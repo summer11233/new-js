@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>选项卡</title>
+    <style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    .active{
+        background: yellow;
+    }
+    #box div{
+        width: 200px;
+        height: 400px;
+        border: 1px solid red;
+        display: none;
+        text-align: center;
+    }
+    #box .show{
+        display: block;
+    }
+    </style>
+</head>
+<body>
+    <div id="box">
+        <button class="active">111</button>
+        <button>222</button>
+        <button>333</button>
+        <div class="show">我我我</div>
+        <div>你你你</div>
+        <div>他他他</div>
+    </div>
+    <script>
+    const btns = document.querySelectorAll('button');
+    const divs = document.querySelectorAll('#box div');
+    console.log(btns,divs);
+    for(var i =0;i<btns.length;i++){
+        btns[i].index = i;
+        btns[i].onclick=function(){
+            for(var i =0;i<btns.length;i++){
+                btns[i].className = '';
+                divs[i].className = '';
+            }
+            this.className ='active';
+            divs[this.index].className = 'show';
+        }
+    }
+    
+    var ary = [2,3,52,1,23,5,6,0];
+    for(var i =0;i<ary.length-1;i++){
+        for(var j=0;j<ary.length-1-i;j++){
+            if(ary[j]>ary[j+1]){
+                var temp = ary[j];
+                ary[j] = ary[j+1];
+                ary[j+1] = temp;
+            }
+            console.log(1);
+        }
+    }
+    console.log(ary)
+    </script>
+</body>
+</html>

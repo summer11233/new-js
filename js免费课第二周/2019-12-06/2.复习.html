@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // String 的方法:处理字符串的方法
+        // 1.有length  2.有索引  每个字符都有对象的下标
+
+        // var obj = {name:1,age:2,50:100}
+        // str[索引,属性名];
+        // obj [age] //当浏览器解析时候,先解析obj这个空间地址,再解析age
+        // var age = 1;
+        // var a = age;
+        // console.log(a)
+        // console.log(age)
+
+
+
+        //被单引号或双引号或反引号抱起来的内容就是字符串
+
+
+        //1.有length
+        //2.有索引:
+        // var str = 'helloworld';
+        //1.toUpperCase:把小写字母转成大写字母;
+
+        //2.toLowerCase//把大写转小写
+
+        //3.charAt:通过索引获取字符串中对应的字符;
+
+        //4.charCodeAt:获取索引对应的字符unicode编码表;
+
+        //5.substr:从索引m开始,截取n个,包括n  substr(m,n),原子符串不变
+
+
+        //6.substring:从索引m开始,截取到索引n,并且不包含索引n.
+        //不支持负数;
+
+
+        //7.slice:从索引m开始,截取到索引n,不包含n,支持负数,如果是负数就是length减去
+
+        //8.indexOf;检测字符在字符串中第一次出现的索引位置;
+        //如果不存在,那么返回-1;
+
+        //9.lastindexOf;检测字符在字符串中最后一次出现的索引位置,不存在返回-1;
+
+        //10.concat:字符串拼接
+
+        //11.replace :替换
+        //原字符串不发生改变
+        //字符串.replace(oldStr,newStr)
+
+        //12.split :按照特定的字符将字符分割成数组的每一项;返回一个数组;
+
+
+        //13.trim:去字符串的左右空格
+        // trimLeft:去掉字符串左边空格
+        // trimRight:去掉右边空格
+
+
+        //Math
+        //Math:引用数据类型  
+        //console.log(Math) 是一个对象
+        //1.Math.abs:取绝对值;
+        console.log(Math.abs(-5));
+
+        //NaN  不参与比较
+        //2.Math.min:取一组数的最小值
+        
+        //3.Math.max:去一组数的最大值
+       
+        //4.Math.floor: 向下取整
+    
+        //5.Math.ceil: 向上取整
+       //6. Math.random();//产生一个[0,1)一个随机小数;
+       
+        //7.Math.round(): 四舍五入保留整数
+      
+        //8.产生60-90的随机整数:[m,n]
+        //Math.round(Math.random()*(n-m)+m)//可以得到90
+        console.log(Math.round(Math.random() * (90 - 60) + 60))
+        //Math.floor(Math.random()*(n-m)+m)//不可以得到90
+
+        //9.Math.pow(m,n) m的n次方
+        console.log(Math.pow(4, 3))
+        //10.Math.sqrt: 开平方
+        console.log(Math.sqrt(25))
+
+        //====================================
+        //Date 的实例是一个对象数据的;
+    console.log(typeof Date)
+    var time = new Date;
+        console.dir(time)
+    console.log(time.getFullYear());//获取时间年
+    console.log(time.getMonth());//范文[0-11] 获取时间月
+    console.log(time.getDate());//获取几号几日[1-31]
+    console.log(time.getDay());//获取星期级;[0-6]周日是0
+    console.log(time.getHours());//获取当前几点
+    console.log(time.getMinutes())//获取当前时间几分
+    console.log(time.getSeconds())//获取当前时间秒
+    console.log(time.getMilliseconds())//获取当前时间毫秒
+    
+
+    //时间戳:表示一个唯一的值
+    console.log(time.getTime())//距离当前时间距离1970-1-1上午八点的毫秒差
+
+    //时间戳:  获取时间戳
+   console.log( Date.now());
+
+
+   ///=============================
+
+//    var  timer = setTimeout(function(){
+
+//    },1000,2);
+//    clearTimeout(timer);//清除
+
+  function fn(){
+       var t = setTimeout(function(){
+        console.log(100);
+
+       },1000)
+   
+  }
+   var d = setTimeout(function(){
+       console.log(200);
+   },500)
+   fn();
+   console.log(d)
+
+  
+
+
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>

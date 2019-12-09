@@ -1,0 +1,140 @@
+h
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>复习</title>
+</head>
+
+<body>
+    <script>
+        //数组的方法  数组的去重  数组的冒泡  14个
+        /* pop  push  shift  unshift  splice slice 
+        reverse sort indexOf
+        lastIndexOf  concat  join  map  forEach */
+
+        //数组去重;在原有的数组上去重
+        // var ary = [12,3,4,5,6,6,7,7,89,9];
+        // //利用对象的属性名不能重复
+        // var obj = {};
+        // for(var i= 0;i<ary.length;i++){
+        //     var cur = ary[i];
+        //     if(obj[cur]===cur){
+        //         ary[i]=ary[ary.length-1];
+        //         ary.length--;
+        //         i--;
+        //         continue;
+        //     }
+        //     obj[cur]=cur;
+        // }
+        // console.log(ary)
+        // var ary = [12,3,4,5,6,6,7,7,89,9];
+        // var obj= {};
+        // for(var i= 0;i<ary.length;i++){
+        //     var cur= ary[i];
+        //     if(obj[cur]===cur){
+        //         ary[i]=ary[ary.length-1];
+        //         ary.length--;
+        //         i--;
+        //         continue;
+        //     }
+        //     obj[cur]= cur;//给obj新增键值对
+        // }
+        // console.log(ary)
+        /* var ary= [12,3,4,5,6,6,7,7,89,9];
+        var obj = {};
+        for(var i=0;i<ary.length;i++){
+            var cur= ary[i];
+            if(obj[cur]===cur){
+                ary[i]=ary[ary.length-1];
+                ary.length--;
+                i--;
+                continue;
+            }
+            obj[cur]=cur;
+        }
+        console.log(ary)
+    
+         */
+
+        /*  var ary= [12,3,4,5,6,6,7,7,89,9];
+         var obj= {};
+         for(var i=0;i<ary.length;i++){
+             var cur= ary[i];
+             if(obj[cur]===cur){
+                 ary[i]=ary[ary.length-1];
+                 ary.length--;
+                 i--;
+                 continue;
+             }
+             obj[cur]=cur;
+         }
+         console.log(ary) */
+
+        /*  var ary = [12,44,66,77,88,99,110,3,31,5,1];
+         //冒泡排序
+         for(var i=0;i<ary.length-1;i++){
+              var flag=true;
+            for(var j=0;j<ary.length-1-i;j++){
+             //里面整个循环一次,解决一个最大值的问题
+             if(ary[j]>ary[j+1]){
+                 var temp = ary[j];
+                 ary[j]=ary[j+1];
+                 ary[j+1]=temp;
+                 flag= false;
+                }
+                console.log(1)
+         }
+         if(flag){
+             break;
+         }
+         }
+         
+         console.log(ary) */
+
+/* var ary = [12, 44, 66, 77, 88, 99, 110, 3, 31, 5, 1];
+        for (var i = 0; i < ary.length - 1; i++) {
+            for (var j = 0; j < ary.length - 1; j++) {
+
+                if (ary[j] > ary[j + 1]) {
+                    var temp = ary[j];
+                    ary[j] = ary[j+1];
+                    ary[j+1] = temp;
+                }
+            }
+        }
+
+        console.log(ary) */
+
+        var ary = [12, 44, 66, 77, 88, 99, 110, 3, 31, 5, 1];
+       /*  for(var i=0;i<ary.length-1;i++){
+            for(var j=0;j<ary.length;j++){
+                if(ary[j]>ary[j+1]){
+                    var temp =ary[j];
+                    ary[j]= ary[j+1];
+                    ary[j+1]=temp;
+
+
+                }
+            }
+        }
+        console.log(ary)
+ */
+        for(var i=0;i<ary.length-1;i++){
+            for(var j=0;j<ary.length-1;j++){
+            if(ary[j]>ary[j+1]){
+                var temp =ary[j];
+                ary[j]=ary[j+1];
+                ary[j+1]=temp;
+            }
+        }
+        }
+      console.log(ary)
+
+    </script>
+</body>
+
+</html>

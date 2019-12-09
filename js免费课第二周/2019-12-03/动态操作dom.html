@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="box">
+        <div id="a">123</div>
+        <div id="b">333</div>
+    </div>
+    <button id="btn">揍我啊</button>
+    <script>
+    //操作谁就要获取谁
+    var box = document.getElementById("box");
+    var btn = document.getElementById("btn");
+    var b = document.getElementById("b")
+    //1. document.createElement: (传一个标签名的字符串,返回一个当前元素标签的元素对象)//对象类型的;
+    var oDiv = document.createElement("div");
+    oDiv.innerHTML = "这次真的块下课了";
+
+    console.log(oDiv);
+       // 2.appendChild
+        //父节点.appendChild(子节点);
+        box.appendChild(oDiv);
+        //3.removeChild
+         //父节点.appendChild(子节点);
+        btn.onclick = function(){   //  点击会执行
+            box.removeChild(b);
+        }
+    
+        //4.insertBefore:在什么之前插入元素
+        //parent.insertBefore(newChild,oldChild)
+
+        // btn.onclick = function(){   //点击会执行
+        //     box.insertBefore(div,b);
+        // }
+        //5.replaceChild;
+        //6.cloneNode;
+    </script>
+</body>
+
+</html>

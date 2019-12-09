@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>字符串的方法</title>
+</head>
+<body>
+    <script>
+    //被单引号或双引号或反引号抱起来的内容就是字符串
+    
+   // var num = {name:'珠峰'}
+    //1.有length
+    //2.有索引:
+       // var str = 'helloworld';
+        //1.toUpperCase:把小写字母转成大写字母;
+        // var newStr = str.toUpperCase();
+        // console.log(newStr);
+    // //2.toLowerCase//把大写转小写
+    // var str = 'HELL0';
+    // var newStr = str.toLowerCase()
+    // console.log(newStr)
+    //     //3.charAt:通过索引获取字符串中对应的字符;
+    //     console.log(str.charAt(1))
+    //     //4.charCodeAt:获取索引对应的字符unicode编码表;
+    //     console.log(str.charCodeAt(1))
+       //5.substr:从索引m开机,截取n个,包括n  substr(m,n),原子符串不变
+       var str = 'helloworld';
+    //    console.log(str.substr(1,3))
+    //    //6.substring:从索引m开始,截取到索引n,并且不包含索引n.
+    //    //不支持负数;
+
+    //    console.log(str.substring(2,5));
+    //    console.log(str.substring(1,-1))
+        //7.slice:从索引m开始,截取到索引n,不包含n,支持负数,如果是负数就是length减去
+        console.log(str.slice(2,5));
+        console.log(str.slice(2,-2));//llowor
+        //8.indexOf;检测字符在字符串中第一次出现的索引位置;
+        //如果不存在,那么返回-1;
+        console.log(str.indexOf("l"))//2
+        console.log(str.indexOf("a"))// -1
+        //9.lastindexOf;检测字符在字符串中最后一次出现的索引位置,不存在返回-1;
+        console.log(str.lastIndexOf('d'));//9
+        console.log(str.length)
+        //10.concat:字符串拼接
+        console.log(str.concat('zhufeng'))
+        //11.replace :替换
+        //原字符串不发生改变
+        //字符串.replace(oldStr,newStr)
+       var newStr = str.replace('world','zhufeng')
+        console.log(newStr);
+        //12.split :按照特定的字符将字符分割成数组的每一项;返回一个数组;
+        var str1 = "zhu+feng";
+        var arr = str1.split("+")
+        var arr4 = str1.split("-") 
+        var arr5 = str1.split("*") 
+        var arr1 = str1.split(",")  
+
+        var arr2 = str1.split("")
+
+        var arr3 = str1.split(" ") 
+       
+       
+
+        console.log(arr)//["zhu", "feng"]
+
+        console.log(arr1)
+        console.log(arr2)
+        console.log(arr3)
+        console.log(arr4)
+        console.log(arr5)
+        var obj = "zhu-feng";
+        var obj1 = obj.split('-')
+        console.log(obj1)
+
+        //13.trim:去字符串的左右空格
+        // trimLeft:去掉字符串左边空格
+        // trimRight:去掉右边空格
+        
+    </script>
+</body>
+</html>

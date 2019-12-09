@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>隔行变色</title>
+    <style type="text/css">
+        ul {
+            width: 500px;
+            height: 800px;
+            margin: 0 auto;
+        }
+
+        ul li {
+            width: 100%;
+            height: 50px;
+            text-align: center;
+            line-height: 50px;
+            border: 1px solid yellowgreen;
+            list-style: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <ul>
+            <li id="box">民谣很穷,一把吉他,民谣很富,四海为家!!!</li>
+            <li id="box">民谣很穷,一把吉他,民谣很富,四海为家!!!</li>
+            <li id="box">民谣很穷,一把吉他,民谣很富,四海为家!!!</li>
+            <li id="box">民谣很穷,一把吉他,民谣很富,四海为家!!!</li>
+            <li id="box">民谣很穷,一把吉他,民谣很富,四海为家!!!</li>
+            <li id="box">民谣很穷,一把吉他,民谣很富,四海为家!!!</li>
+            <li id="box">民谣很穷,一把吉他,民谣很富,四海为家!!!</li>
+            <li id="box">民谣很穷,一把吉他,民谣很富,四海为家!!!</li>
+            <li id="box">民谣很穷,一把吉他,民谣很富,四海为家!!!</li>
+
+
+        </ul>
+
+
+
+
+    </div>
+    <script>
+        /* 
+        奇数行背景是红色,偶数行背景是蓝色;
+        */
+        //document.getElementsByTagName: 通过标签名来获取元素;
+        //在document的文档下,获取所有的li元素;
+        var list = document.getElementsByTagName('li');
+        //console.log(list)//类数组 有length
+        //循环
+        for (var i = 0; i < list.length; i++) {
+            if (i % 2 === 1) {
+                list[i].style.background = 'red';
+            } else {
+                list[i].style.background = 'skyblue';
+            }
+            //给每一行li新增一个bg属性.这个bg属性存储了当前li的背景颜色;
+
+            list[i].bg = list[i].style.background;
+
+            //当鼠标滑上这个li时,那么该函数执行;
+            list[i].onmouseover = function () {
+
+                this.style.background = 'pink';
+
+            }
+            //当鼠标离开li时;
+            list[i].onmouseout = function () {
+                this.style.background = this.bg;
+            }
+
+        }
+        //1.鼠标滑入当前里,li背景颜色变为粉红色,滑出时恢复之前原来的颜色
+        
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Math</title>
+</head>
+<body>
+    <script>
+    //Math
+    //Math:引用数据类型  
+    //console.log(Math) 是一个对象
+    //1.Math.abs:取绝对值;
+   console.log( Math.abs(-5));
+
+    //NaN  不参与比较
+    //2.Math.min:取一组数的最小值
+    console.log(Math.min(1,2,3,45))
+    //3.Math.max:去一组数的最大值
+    console.log(Math.max(12,3,4,54))
+    //4.Math.floor: 向下取整
+    console.log(Math.floor(-4.90999));//-5
+    //5.Math.ceil: 向上取整
+    console.log(Math.ceil(4.0009))
+    console.log(Math.ceil(-4.0009))//-4
+    //6. Math.random();//产生一个[0,1)一个随机小数;
+    console.log(Math.random())
+    //7.Math.round(): 四舍五入保留整数
+    console.log(Math.round(5.06))
+    console.log(Math.round(5.6))
+    //8.产生60-90的随机整数:[m,n]
+    //Math.round(Math.random()*(n-m)+m)//可以得到90
+    console.log(Math.round(Math.random()*(90-60)+60))
+     //Math.floor(Math.random()*(n-m)+m)//不可以得到90
+     //9.Math.pow(m,n) m的n次方
+     console.log(Math.pow(4,3))
+     //10.Math.sqrt: 开平方
+     console.log(Math.sqrt(25))
+
+     //产生一个四位的随机验证码
+
+     var cur = "1234567890qwertyuiopasdfghjklzxcvbnmQWERTYUIIOPASDFGHJKLZXCVBNM";
+    
+    
+    
+    
+    </script>
+</body>
+</html>

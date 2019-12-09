@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="box" name="a">
+        <div>
+            <ul >
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+            <div>
+                <div id="a"></div>
+            </div>
+        </div>
+
+
+
+    </div>
+    <script>
+    //     JS :组成三部分
+    // JS : ECMAScript : 定义一些JS的规范;
+    // DOM:document object  model:文档对象模型
+    // BOM:browser  object  model : 浏览器对象模型
+    // 1.document.getElementById(): 在document文档下,通过id获取元素;
+        var box1 = document.getElementById('box');
+        //box1:对象:在JS中标签是叫元素;也叫元素对象
+        //typeof box1 -->"object"
+        //box1.style  证明box1 是对象
+
+
+        
+        // 1.如果id重名,那么会获取到第一个元素;
+        // 2.如果不存在id,那么获取到结果是null;
+        // 3.getElementById()的上下文必须是document;
+        console.log(box1)//元素对象
+        // var c = box1.getElementById("a");
+        var d = document.getElementById("a");
+        console.log(d);
+
+        //2.document.getElementsByTagName : 通过标签名来获取元素;
+        var olis= document.getElementsByTagName("li")
+        console.log(olis)//类数组集合,不是一个数组,但有length,有索引,不能使用数组方法
+      
+
+        var divs = document.getElementsByTagName("div");
+        var box = document.getElementById("box")
+        console.log(box)
+        console.log(divs)
+        divs[0].style.background= 'blue';
+        console.log(box===divs[0]);//true
+        
+        
+
+
+
+        document.getElementsByClassName
+        //3.document.getElementsByClassName:通过class来获取元素;
+
+
+
+    //4.document.getElementsByName  通过name行间属性来控制获取的元素
+
+    
+    document.querySelector ("#box")//   获取id名是box的元素或clas名获取
+    document.querySelectorAll(".a")//获取所有class名
+    
+    
+    
+    </script>
+</body>
+</html>

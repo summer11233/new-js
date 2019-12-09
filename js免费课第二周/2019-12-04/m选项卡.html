@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>选项卡</title>
+    <style>
+        /* *{
+        margin: 0;
+        padding: 0;
+    }
+    .active{
+        background: chartreuse;
+    }
+    #box div{
+        width: 500px;
+        height: 300px;
+        border: 1px solid red;
+        display: none;
+    }
+    #box div.show{
+            display: block;
+    } */
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .active {
+            background: yellow;
+        }
+
+        #box div {
+            border: 1px solid red;
+            width: 500px;
+            height: 300px;
+            display: none;
+        }
+
+        #box .show {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- <div id="box">
+        <button class="actiive">111</button>
+        <button>222</button>
+        <button>333</button>
+        <div class="show">我我我</div>
+        <div>你你你</div>
+        <div>他他他</div>
+    </div>
+    <script>
+    const btns = document.querySelectorAll("button");
+    const divs = document.querySelectorAll("#box div");
+        console.log(divs)
+    for(var i = 0;i<btns.length;i++){
+        btns[i].index = i;
+        btns[i].onclick = function(){
+            for(var i=0;i<btns.length;i++){
+                btns[i].className= '';
+                divs[i].className ='';
+            }
+            this.className = 'active';
+            divs[this.index].className= 'show';
+        }
+    } -->
+
+
+
+    <!-- </script> -->
+    <div id="box">
+        <button class="active">111</button>
+        <button>222</button>
+        <button>333</button>
+        <div class="show">你你你</div>
+        <div>我我</div>
+        <div>他她</div>
+    </div>
+    <script>
+        const btns = document.querySelectorAll('button');
+        const divs = document.querySelectorAll('#box div');
+        console.log(divs);
+        for (var i = 0; i < btns.length; i++) {
+            btns[i].index = i;
+
+            btns[i].onclick = function () {
+                for (var i = 0; i < btns.length; i++) {
+                    btns[i].className = '';
+                    divs[i].className = '';
+                }
+            //    btns[this.index].className = 'active';
+               this.className='active';
+                divs[this.index].className = 'show';
+            }
+
+        }
+
+       /*  var ary =[1,23,34,5,67,9];
+        for(var i= 0;i<ary.length-1;i++){
+            for(var j=0;j<ary.length-1-i;j++){
+                if(ary[j]>ary[j+1]){
+                    var temp = ary[j];
+                    ary[j] = ary[j+1];
+                    ary[j] = temp;
+                }
+            }
+            console.log(1);
+        }
+        console.log(ary) */
+
+
+        /* var ary = [1, 2, 3, 4, 5, 6, 7, 9, 8]
+        for (var i = 0; i < ary.length - 1; i++) {
+            for (var j = 0; j < ary.length - 1-i; j++) {
+                if (ary[j] >ary[j + 1]) {
+                    var temp = ary[j];
+                    ary[j] = ary[j + 1];
+                    ary[j + 1] = temp;
+                }
+                console.log(1)
+            }
+        }
+        console.log(ary)
+ */
+
+    </script>
+</body>
+
+</html>

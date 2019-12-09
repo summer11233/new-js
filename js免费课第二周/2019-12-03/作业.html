@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>作业</title>
+    <style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    #input{
+        width: 200px;
+        height: 50px;
+    }
+    </style>
+
+</head>
+<body>
+    
+    <input type="text" name="" id="input">
+    <ul id="ul">
+        
+        </ul>
+    <script>
+    var input = document.getElementById("input");
+    var ul= document.getElementById("ul");
+   
+    input.onblur = function(){
+        var val = input.value;
+        
+        ul.innerHTML = ul.innerHTML +  '<li>'+val+'</li>';
+        input.value = '';
+    }
+    
+    
+    </script>
+</body>
+</html>

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //免费课第一周:  变量
+        // var ary = "1";
+        // //以后用到变量,都是用的变量所存储的值;
+        // ary+"2";
+        // var a = ary;//等号右边一定是数据类型的一种
+        // var ary;//ary只声明,未定义,那么默认存储undefined
+        // var total = 0;
+        // for (var i=0;i<100;i++){
+        //     total+=i; //在total自身基础上+i;累加的过程
+        // }
+        // console.log(total);
+
+        function sum() {//arguments:实参集合:是一个类数组
+            var total = 0;
+            for (var i = 0; i < arguments.length; i++) {
+                var cur = Number(arguments[i]);
+                if (!isNaN(cur)) {
+                    total += cur;
+                }
+
+            }
+            console.log(total);
+             return total;
+
+        }
+        
+        //如果注销return  那就拿不到值  就是undefined
+
+     sum(1, 2, 3, 4, 5, 6, 7, "NaN", "3px");
+        console.log(sum(1, 2, 3, 4, 5, 6, 7, "NaN", "3px"))
+
+
+        //数据类型
+        //基本数据类型是值类型;引用数据类型是空间地址类型;
+        //基本数据类型存储到栈内存中,引用数据类型存储到堆内存;
+
+        // 栈内存提供代码的运行环境
+
+
+        // Number:Number()//函数   加小扩号就是结果
+        var str = "1";
+        var n = Number(str);//把返回值给了n   原字符不变  Number这个方法的执行结果
+        console.log(str)
+        console.log(n);
+        console.log(Number("2"))//2  方法天生有return  这是函数
+        console.log(Number)//函数   
+
+        //isNaN : 是数字返回false
+        // isNaN(null) isNaN  会先调用Number方法将null转成数字
+        //parseInt
+        // parseInt("2px")//2
+        //parseFloat
+        // parseFloat("2.3px")//2.3
+
+        // toFixed:  返回一个字符串,保留小数点位数
+        // num.toFixed(2);   不能这样写toFixed(num,2)
+        // Boolean:true  false
+        // Boolean:  0;"",NaN, null ,undefined  //true
+        // Boolean("null")//true
+
+
+        // !:先把!后面的值转成布尔值,然后再取反
+        // !isNaN //false   //内置类函数    
+
+
+            //null   undefined
+
+
+        //  + 1.当获取对象中属性名对应的属性值时, 如果没有对应的属性名, 默认获取到undefined;
+        // + 2.变量只声明, 没有被赋值, 那么默认值就是undefined;
+        // + 3.函数如果只有形参, 没有对应的实参, 那么形参默认存储的值是undefined;
+        // + 4.函数如果没有return, 那么函数默认返回值就是undefined;
+
+        // 数据类型的检测
+        // typeof  instanceof  constructor  Object.prototype.tostring.call()
+        // typeof:检测数据类型特点:
+        //1检测结果一定是一个字符串:  //
+        // console.log(typeof num);    //undefined
+        // console.log(typeof typeof num);//string
+        // typeof  {};//'object'
+        // typeof [];//'object'
+
+        //数据类型比较;
+        // {}=={}  比较的是空间地址,在JS中遇到{},[]都会开辟一个新的空间地址;
+        //{}=="";把对象转成字符串,然后在比较;
+        // {}==false;对象转字符;  字符串转数字  布尔转数字
+        // {}==0;对象转字符串,字符串转数字,然后比较
+        // []==0;  把数组转字符串,字符串转数字,然后在比较
+        // 布尔==字符串  布尔要转数字   字符串转数字
+        // 布尔==数字   布尔转数字
+        // 字符串==数字  字符串转数字
+        //NaN==NaN // false  null==undefined//true    null===undefined  false
+
+
+        //对象
+
+
+
+
+    </script>
+</body>
+
+</html>

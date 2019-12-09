@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>验证码</title>
+    <style>
+   
+        *{
+            margin: 0;
+            padding: 0;
+        }
+  #code{
+            width:200px;
+            height:50px;
+            text-align: center;
+            line-height:50px;
+            margin:100px auto;
+            border:1px solid red;
+            border-radius:5px;
+            color:red;
+            font-size:30px;
+        }
+   
+
+    
+    
+    
+    </style>
+</head>
+<body>
+    <div id="code"></div>
+    <script>
+    var str = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'
+    //每隔1000ms;产生一个随机的验证码;
+    //先产生随机的索引,再通过索引去获取str中的字符,索引随机,字符也随机;
+    //由于字符一共有62,所以随机的数字范围[0-61];
+    function getCoad(){
+        var i =0;
+        var newStr = '';
+        while(i<4){
+            i++;
+            var num = Math.round(Math.random()*(61-0)+0);
+            newStr+=str[num];
+            //console.log(str[num])
+            console.log(newStr)
+        }
+       code.innerHTML = newStr;
+    }
+    
+    getCoad();
+        num =0;
+    // var timer= setInterval(()=>{
+    //     getCoad();
+    //     num++;
+    //     console.log(num)
+    //     if(num===10){
+    //         clearInterval(timer);
+    //     }
+    // }, 1000);
+    </script>
+</body>
+</html>

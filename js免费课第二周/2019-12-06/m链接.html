@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>获取参数</title>
+</head>
+<body>
+    <script>
+    var  str = "https://www.baidu.com/index.php?wd=手机&name=zhufeng&age=10&class=14";
+
+    // function queryParams(url){
+    //     var index = url.indexOf("?");
+    //     var lastStr = url.substring(index+1);
+    //     var ary = lastStr.split("&");
+    //     var obj = {};
+    //     for(var i=0;i<ary.length;i++){
+    //         var arr = ary[i].split("=");
+    //         var key =arr[0];
+    //         var val = arr[1];
+    //          obj[key] = val;
+    //     }
+    //     return obj;
+        
+    // }
+    // console.log(queryParams(str));
+
+//     function queryParams(url){
+//         var index = url.indexOf("?");
+//         var lastStr = url.substring(index+1);
+//         var ary = lastStr.split("&");
+//         var obj = {};
+//         for(var i = 0;i<ary.length;i++){
+//             var arr = ary[i].split("=");
+//             var key = arr[0];
+//             var val = arr[1];
+//             obj[key] = val;
+//         }
+//         return obj;
+//     }
+// console.log(queryParams(str))
+
+    //    function queryParams(url){
+    //        var index = str.indexOf("?");
+    //        var lastStr = str.substring(index+1);
+    //        var ary= lastStr.split("&");
+    //        var obj = {};
+    //        for(var i =0;i<ary.length;i++){
+    //            var arr = ary[i].split("=");
+    //            var key = arr[0];
+    //            var val = arr[1];
+    //            obj[key] = val;
+    //        }
+    //        return obj;
+    //    }
+    //    console.log(queryParams(str))
+
+
+    //    function queryParams(url){
+    //         var index = url.indexOf("?");
+    //         var lastStr = url.substring(index+1);
+    //         var ary = lastStr.split("&");
+    //         var obj = {};
+    //         for (var i = 0;i<ary.length;i++){
+    //             var  arr = ary[i].split("=");
+    //             var key = arr[0];
+    //             var val = arr[1];
+    //             obj[key]= val;
+    //         }
+    //         return obj;
+    //    }
+    //    console.log(queryParams(str))
+
+    // function  queryParams(url){
+    //     var index = url.indexOf("?");
+    //     var lastStr = url.substring(index+1);
+    //     var ary = lastStr.split("&");
+    //     var obj = {};
+    //     for(var i = 0;i<ary.length;i++){
+    //         var  arr = ary[i].split("=");
+    //         var  key = arr[0];
+    //         var val = arr[1];
+    //         obj[key] = val;
+    //     }
+    //     return obj;
+    // }
+
+    // console.log(queryParams(str))
+
+
+
+
+    // function queryParams(url){
+    //     var index = url.indexOf("?");
+    //     var lastStr = url.substring(index+1);
+    //     var ary = lastStr.split("&");
+    //     var obj = {};
+    //     for(var i= 0;i<ary.length;i++){
+    //         var  arr = ary[i].split("=");
+    //         var  key = arr[0];
+    //         var val = arr[1];
+    //         obj[key]= val;
+    //     }
+    //     return obj;
+    // }
+    // console.log(queryParams(str))
+    // function queryParams(url){
+    //     var index = url.indexOf("?");
+    //     var lastStr = url.substring(index+1);
+    //     var ary = lastStr.split("&");
+    //     var obj = {};
+    //     for(var i =0;i<ary.length;i++){
+    //         var arr = ary[i].split("=");
+    //         var key = arr[0];
+    //         var val = arr[1];
+    //         obj[key] = val;
+    //     }
+    //     return obj;
+    // }
+    // console.log(queryParams(str));
+
+    // function queryParams(url){
+    //     var index = url.indexOf("?");
+    //     var lastStr = url.substring(index+1);
+    //     var ary = lastStr.split("&");
+    //     var obj = {};
+    //     for (var i = 0;i<ary.length;i++){
+    //         var  arr = ary[i].split("=");
+    //         var key = arr[0];
+    //         var  val = arr[1];
+    //         obj[key] = val;
+    //     }
+    //     return obj;
+    // }
+    // console.log(queryParams(str))
+
+    function queryParams(url){
+        var index = url.indexOf("?");
+        var lastStr = url.substring(index+1);
+        var ary = lastStr.split("&");
+        var obj = {};
+        for(var i=0;i<ary.length;i++){
+            var  arr =ary[i].split("=");
+            var  key = arr[0];
+            var val = arr[1];
+            obj[key] = val;
+        }
+            return obj;
+    }
+    console.log(queryParams(str))
+    </script>
+</body>
+</html>
